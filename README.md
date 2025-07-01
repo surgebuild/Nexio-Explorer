@@ -1,4 +1,4 @@
-# Aptos Explorer
+# Nexio Devnet Explorer
 
 ## How to use
 
