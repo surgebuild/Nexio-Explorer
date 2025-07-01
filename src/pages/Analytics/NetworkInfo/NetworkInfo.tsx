@@ -1,7 +1,7 @@
 import React, {createContext} from "react";
 import {Grid} from "@mui/material";
 import TotalSupply from "./TotalSupply";
-import TotalStake from "./TotalStake";
+// import TotalStake from "./TotalStake";
 import TPS from "./TPS";
 import TotalTransactions from "./TotalTransactions";
 import {useGetInMainnet} from "../../../api/hooks/useGetInMainnet";
@@ -55,11 +55,11 @@ export default function NetworkInfo({isOnHomePage}: NetworkInfoProps) {
             <TotalSupply />
           </LinkableContainer>
         </Grid>
-        <Grid size={{xs: 12, md: 6, lg: 3}}>
+        {/* <Grid size={{xs: 12, md: 6, lg: 3}}>
           <LinkableContainer linkToAnalyticsPage={onHomePage}>
             <TotalStake />
           </LinkableContainer>
-        </Grid>
+        </Grid> */}
         <Grid size={{xs: 12, md: 6, lg: 3}}>
           <LinkableContainer linkToAnalyticsPage={onHomePage}>
             <TPS />

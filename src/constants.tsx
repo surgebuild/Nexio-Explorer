@@ -3,15 +3,13 @@ import {CoinDescription} from "./api/hooks/useGetCoinList";
 /**
  * Network
  */
-export const devnetUrl =
-  import.meta.env.APTOS_DEVNET_URL ||
-  "https://api.devnet.staging.aptoslabs.com/v1";
+export const devnetUrl = "http://192.81.214.203:8080/v1";
 
 export const networks: Record<string, string> = {
   mainnet: "https://api.mainnet.aptoslabs.com/v1",
   testnet: "https://api.testnet.staging.aptoslabs.com/v1",
   devnet: devnetUrl,
-  local: "http://127.0.0.1:8080/v1",
+  local: "https://rpc.nexio.codecrane.com/v1",
 };
 
 export type NetworkName = keyof typeof networks;
@@ -60,7 +58,7 @@ for (const key of Object.keys(networks)) {
   }
 }
 
-export const defaultNetworkName: NetworkName = "mainnet" as const;
+export const defaultNetworkName: NetworkName = "devnet" as const;
 
 if (!(defaultNetworkName in networks)) {
   throw `defaultNetworkName '${defaultNetworkName}' not in Networks!`;
@@ -352,7 +350,8 @@ export const knownAddresses: Record<string, string> = {
     "STAN app",
   "0xe63780c1d8f66aa2a5f30cc920af21fc82c4707225756c765bd12a2f7da61383":
     "Balance fun",
-  "0x664f1da7f6256b26a7808e0e5b02e747c4c6450e92b602740a2a5514bba91e52": "Defi Cattos",
+  "0x664f1da7f6256b26a7808e0e5b02e747c4c6450e92b602740a2a5514bba91e52":
+    "Defi Cattos",
   // Fungible assets
   "0x357b0b74bc833e95a115ad22604854d6b0fca151cecd94111770e5d6ffc9dc2b": "USDt",
   "0xf73e887a8754f540ee6e1a93bdc6dde2af69fc7ca5de32013e89dd44244473cb":
@@ -820,11 +819,9 @@ export const EMOJICOIN_REGISTRY_ADDRESS =
   "0x4b947ed016c64bde81972d69ea7d356de670d57fd2608b129f4d94ac0d0ee61";
 
 export const nativeTokens: Record<string, string> = {
-  "0x1::aptos_coin::AptosCoin": "APT",
-  "0x000000000000000000000000000000000000000000000000000000000000000a": "APT",
-  "0x000000000000000000000000000000000000000000000000000000000000000A": "APT",
-  "0xa": "APT",
-  "0xA": "APT",
+  "0x1::aptos_coin::AptosCoin": "NEXIO",
+  "0xa": "NEXIO",
+  "0xA": "NEXIO",
 };
 export const manuallyVerifiedTokens: Record<string, string> = {
   "0x357b0b74bc833e95a115ad22604854d6b0fca151cecd94111770e5d6ffc9dc2b": "USDt",

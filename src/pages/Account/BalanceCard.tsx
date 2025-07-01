@@ -33,16 +33,14 @@ export default function BalanceCard({address}: BalanceCardProps) {
   }, []);
 
   const balanceUSD =
-    balance.data && price !== null
-      ? (Number(balance.data) * Number(price)) / 10e7
-      : null;
+    balance && price !== null ? (Number(balance) * Number(price)) / 10e7 : null;
 
-  return balance.data ? (
+  return balance ? (
     <Card height="auto">
       <Stack spacing={1.5} marginY={1}>
         {/* APT balance */}
         <Typography fontSize={17} fontWeight={700}>
-          {`${getFormattedBalanceStr(balance.data)} APT`}
+          {`${getFormattedBalanceStr(balance)} NEX`}
         </Typography>
 
         {/* USD value */}
@@ -58,7 +56,7 @@ export default function BalanceCard({address}: BalanceCardProps) {
             Balance
           </Typography>
           <StyledTooltip
-            title={`This balance reflects the amount of APT tokens held in your wallet${globalState.network_name === "mainnet" ? ` and their live value in USD at a rate of 1 APT = $${price?.toFixed(2)}` : ""}.`}
+            title={`This balance reflects the amount of NEX tokens held in your wallet${globalState.network_name === "mainnet" ? ` and their live value in USD at a rate of 1 NEX = $${price?.toFixed(2)}` : ""}.`}
           >
             <InfoOutlinedIcon sx={{fontSize: 15, color: grey[450]}} />
           </StyledTooltip>

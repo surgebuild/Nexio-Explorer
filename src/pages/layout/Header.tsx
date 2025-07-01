@@ -5,7 +5,7 @@ import Container from "@mui/material/Container";
 import NetworkSelect from "./NetworkSelect";
 import {useColorMode} from "../../context";
 import {useMediaQuery, useTheme} from "@mui/material";
-import LogoIcon from "../../assets/svg/aptos_logo_icon.svg?react";
+import LogoIcon from "../../assets/svg/nexio-logo.svg?react";
 import IconLight from "../../assets/svg/icon_light.svg?react";
 import IconDark from "../../assets/svg/icon_dark.svg?react";
 import Button from "@mui/material/Button";
@@ -15,13 +15,14 @@ import NavMobile from "./NavMobile";
 import {grey} from "../../themes/colors/aptosColorPalette";
 import {useInView} from "react-intersection-observer";
 import FeatureBar from "./FeatureBar";
-import {WalletConnector} from "@aptos-labs/wallet-adapter-mui-design";
+// import {WalletConnector} from "@aptos-labs/wallet-adapter-mui-design";
 import {useGlobalState} from "../../global-config/GlobalConfig";
 import {useWallet} from "@aptos-labs/wallet-adapter-react";
 import {sendToGTM} from "../../api/hooks/useGoogleTagManager";
 import {Link, useNavigate} from "../../routing";
 import {useLogEventWithBasic} from "../Account/hooks/useLogEventWithBasic";
 import {addressFromWallet, sortPetraFirst} from "../../utils";
+import {WalletConnector} from "../../components/WalletConnector";
 
 export default function Header() {
   const scrollTop = () => {
@@ -118,9 +119,11 @@ export default function Header() {
               to="/"
               color="inherit"
               underline="none"
+              justifyContent="center"
+              alignItems="center"
+              display="flex"
               sx={{
-                width: {xs: "30px", sm: "30px", md: "40px"},
-                height: {xs: "30px", sm: "30px", md: "40px"},
+                width: {xs: "40px", sm: "90px", md: "120px"},
                 marginRight: "auto",
               }}
             >
@@ -154,7 +157,8 @@ export default function Header() {
                   handleNavigate={() =>
                     navigate(`/account/${account?.address}`)
                   }
-                  sortInstallableWallets={sortPetraFirst}
+                  sortDefaultWallets={sortPetraFirst}
+                  sortMoreWallets={sortPetraFirst}
                   modalMaxWidth="sm"
                 />
               </Box>

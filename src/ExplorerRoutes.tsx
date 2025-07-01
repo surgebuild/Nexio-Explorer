@@ -12,11 +12,11 @@ const BlockPage = lazy(() => import("./pages/Block/Index"));
 const TokenPage = lazy(() => import("./pages/Token/Index"));
 const TransactionsPage = lazy(() => import("./pages/Transactions/Index"));
 const BlocksPage = lazy(() => import("./pages/Blocks/Index"));
-const ValidatorsPage = lazy(() => import("./pages/Validators/Index"));
+// const ValidatorsPage = lazy(() => import("./pages/Validators/Index"));
 const EnhancedValidatorsPage = lazy(
   () => import("./pages/Validators/Delegation/EnhancedValidatorsPage"),
 );
-const ValidatorPage = lazy(() => import("./pages/DelegatoryValidator"));
+// const ValidatorPage = lazy(() => import("./pages/DelegatoryValidator"));
 const AnalyticsPage = lazy(() => import("./pages/Analytics/Index"));
 
 export default function ExplorerRoutes() {
@@ -25,15 +25,15 @@ export default function ExplorerRoutes() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/transactions" element={<TransactionsPage />} />
-        <Route path="/validators" element={<ValidatorsPage />}>
+        {/* <Route path="/validators" element={<ValidatorsPage />}>
           <Route path=":tab" element={<ValidatorsPage />} />
-        </Route>
+        </Route> */}
         <Route path="/validators-enhanced" element={<EnhancedValidatorsPage />}>
           <Route path=":tab" element={<EnhancedValidatorsPage />} />
         </Route>
-        <Route path="/validator">
+        {/* <Route path="/validator">
           <Route path=":address" element={<ValidatorPage />} />
-        </Route>
+        </Route> */}
         <Route path="/txn">
           <Route path=":txnHashOrVersion" element={<TransactionPage />} />
           <Route path=":txnHashOrVersion/:tab" element={<TransactionPage />} />
