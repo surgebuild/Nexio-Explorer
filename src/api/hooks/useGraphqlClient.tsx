@@ -22,9 +22,9 @@ export function getGraphqlURI(networkName: NetworkName): string | undefined {
     case "testnet":
       return "https://api.testnet.staging.aptoslabs.com/v1/graphql";
     case "devnet":
-      return "https://api.devnet.staging.aptoslabs.com/v1/graphql";
+      return "https://graphql.nexio.codecrane.com/v1/graphql";
     case "local":
-      return "http://127.0.0.1:8090/v1/graphql";
+      return "https://graphql.nexio.codecrane.com/v1/graphql";
     default:
       return undefined;
   }
