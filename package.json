@@ -1,5 +1,5 @@
 {
-  "name": "aptos-explorer",
+  "name": "nexio-devnet-explorer",
   "version": "0.0.1",
   "private": true,
   "packageManager": "pnpm@10.10.0",

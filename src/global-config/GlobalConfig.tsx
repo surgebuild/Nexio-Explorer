@@ -16,7 +16,7 @@ import {getGraphqlURI} from "../api/hooks/useGraphqlClient";
 import {Aptos, AptosConfig, NetworkToNetworkName} from "@aptos-labs/ts-sdk";
 
 const HEADERS = {
-  "x-indexer-client": "aptos-explorer",
+  "x-indexer-client": "nexio-devnet-explorer",
 };
 
 export type GlobalState = {
